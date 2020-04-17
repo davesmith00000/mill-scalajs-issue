@@ -8,7 +8,8 @@ import shared.ClearColor
 final class ClearColorDelegate(_r: Double, _g: Double, _b: Double, _a: Double) {
 
   @JSExport
-  val r = _r
+  var r = _r
+  r = 1.0
 
   @JSExport
   val g = _g

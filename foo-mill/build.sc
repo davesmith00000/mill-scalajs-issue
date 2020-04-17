@@ -19,7 +19,7 @@ object foo extends ScalaJSModule {
   def scalacOptions = Seq("-P:wartremover:only-warn-traverser:org.wartremover.warts.Unsafe")
 
   // This line breaks the Scala.js fastOpt build.
-  def scalacPluginIvyDeps = Agg(ivy"org.wartremover:::wartremover:2.4.5")
+  def scalacPluginIvyDeps = T { super.scalacPluginIvyDeps() ++ Agg(ivy"org.wartremover:::wartremover:2.4.5") }
 
   object test extends Tests {
     def ivyDeps = Agg(ivy"com.lihaoyi::utest:0.7.1")
