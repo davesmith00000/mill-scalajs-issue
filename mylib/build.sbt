@@ -10,7 +10,8 @@ lazy val commonSettings = Seq(
   ),
   testFrameworks += new TestFramework("utest.runner.Framework"),
   scalacOptions in (Compile, doc) ++= Seq("-groups", "-implicits"),
-  scalacOptions += "-Yrangepos"
+  scalacOptions += "-Yrangepos",
+  wartremoverWarnings in (Compile, compile) ++= Warts.all
 )
 
 // Shared

@@ -16,6 +16,8 @@ object foo extends ScalaJSModule {
     MavenRepository("https://oss.sonatype.org/content/repositories/releases")
   )
 
+  def scalacOptions = Seq("-P:wartremover:only-warn-traverser:org.wartremover.warts.Unsafe")
+
   // This line breaks the Scala.js fastOpt build.
   def scalacPluginIvyDeps = Agg(ivy"org.wartremover:::wartremover:2.4.5")
 

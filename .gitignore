@@ -17,4 +17,3 @@ node_modules
 .metals/
 .bloop
 metals.sbt
-project/
